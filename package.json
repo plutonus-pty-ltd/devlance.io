@@ -1,25 +1,40 @@
 {
-  "name": "turborepo-basic-shared",
-  "version": "0.0.0",
-  "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
-  "scripts": {
-    "build:main": "yarn build --scope=devlance-base",
-    "build": "turbo run build",
-    "dev": "turbo run dev --parallel",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
-  },
-  "devDependencies": {
-    "prettier": "latest",
-    "turbo": "latest"
-  },
-  "engines": {
-    "npm": ">=7.0.0",
-    "node": ">=14.0.0"
-  },
-  "packageManager": "yarn@1.22.17"
+    "name": "turborepo-basic-shared",
+    "version": "0.0.0",
+    "private": true,
+    "workspaces": [
+        "apps/*",
+        "packages/*"
+    ],
+    "scripts": {
+        "build:main": "yarn build --scope=devlance-base",
+        "build": "turbo run build",
+        "dev": "turbo run dev --parallel",
+        "test": "turbo run test",
+        "lint": "turbo run lint",
+        "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+        "prepare": "husky install"
+    },
+    "devDependencies": {
+        "husky": "^7.0.4",
+        "lint-staged": "^12.4.1",
+        "prettier": "^2.6.2",
+        "turbo": "latest"
+    },
+    "engines": {
+        "npm": ">=7.0.0",
+        "node": ">=14.0.0"
+    },
+    "lint-staged": {
+        "apps/**/*.{js,ts,jsx,tsx}": [
+            "eslint --fix"
+        ],
+        "packages/ui/**/*.{js,ts,jsx,tsx}": [
+            "eslint --fix"
+        ],
+        "*.json": [
+            "prettier --write"
+        ]
+    },
+    "packageManager": "yarn@1.22.17"
 }
