@@ -1,8 +1,10 @@
-import type { NextPage } from 'next'
+import React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 
-const Home: NextPage = () => {
+import { Button } from 'ui/Button'
+
+function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
@@ -23,6 +25,7 @@ const Home: NextPage = () => {
           <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
             pages/index.tsx
           </code>
+          <Button />
         </p>
 
         <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
