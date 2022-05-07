@@ -24,7 +24,7 @@ const ThemeProvider = ({ initialTheme, children }: { initialTheme?: string, chil
 		localStorage.setItem("theme", themeToSet);
 	}
 
-	if(initialTheme) rawSetTheme(initialTheme);
+	if(initialTheme !== "init") rawSetTheme(initialTheme);
 
 	useEffect(() => rawSetTheme(theme ?? "light"), [theme]);
 
@@ -37,7 +37,7 @@ const ThemeProvider = ({ initialTheme, children }: { initialTheme?: string, chil
 }
 
 ThemeProvider.defaultProps = {
-	initialTheme: "light"
+	initialTheme: "init"
 }
 
 export default ThemeProvider;
