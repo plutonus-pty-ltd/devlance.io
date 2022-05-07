@@ -4,8 +4,7 @@ import Image from 'next/image'
 
 import { Button } from 'ui/Button'
 
-function Home() {
-  return (
+const Home = () => (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
         <title>Create Next App</title>
@@ -84,6 +83,5 @@ function Home() {
       </footer>
     </div>
   )
-}
 
 export default Home

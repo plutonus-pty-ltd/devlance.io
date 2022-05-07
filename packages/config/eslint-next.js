@@ -19,7 +19,6 @@ module.exports = {
         next: {
             rootDir: [
                 'apps/devlance.io/',
-                'apps/base-placeholder/',
                 'packages/ui/',
                 'packages/config/',
                 'packages/tsconfig/',
@@ -45,6 +44,7 @@ module.exports = {
             2,
             { namedComponents: 'arrow-function' },
         ],
+        '@next/next/no-html-link-for-pages': ['error', './src/pages'],
     },
     overrides: [
         {
@@ -59,6 +59,12 @@ module.exports = {
                 'plugin:testing-library/react',
                 'plugin:jest/recommended',
             ],
+            rules: {
+                'import/no-extraneous-dependencies': [
+                    'off',
+                    { devDependencies: ['**/?(*.)+(spec|test).[jt]s?(x)'] },
+                ],
+            },
         },
     ],
     ignorePatterns: [
@@ -68,5 +74,6 @@ module.exports = {
         '.turbo',
         '.next',
         'public',
+        'coverage',
     ],
 };

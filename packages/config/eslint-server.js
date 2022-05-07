@@ -40,5 +40,5 @@ module.exports = {
             extends: ['plugin:jest/recommended'],
         },
     ],
-    ignorePatterns: ['**/*.js', 'node_modules', '.turbo', 'build'],
+    ignorePatterns: ['**/*.js', 'node_modules', '.turbo', 'build', 'coverage'],
 };
